@@ -89,6 +89,10 @@ sub _autoload {
 	foreach my $module (keys %{$modules{$pkg}}) {
 	    _use_module($pkg,$module,@{$modules{$pkg}->{$module}});
 	    delete $modules{$pkg}->{$module};
+	    if ($module->can('autoload')) {
+		*{ qualify_to_ref('AUTOLOAD', $module) } = *{ qualify_to_ref('autoload', $module) };
+	    }
+	    
 	}
     }
 
