@@ -7,6 +7,7 @@
 #   2007-01-22 erwan Support import arguments and object orientation
 #   2007-01-23 erwan Support recursive 'use later' calls
 #   2007-01-25 erwan More pod + debug messages
+#   2014-04-23 aelshesh Patch to support autoload subs
 #
 
 package later;
@@ -18,7 +19,7 @@ use Symbol;
 use Data::Dumper;
 use Carp qw(croak);
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use vars qw($DEBUG);
 BEGIN {
@@ -305,9 +306,10 @@ See 'load', 'SelfLoader', 'AutoLoader', 'autouse', 'Class::Autouse'.
 
 $Id: later.pm,v 1.9 2007-01-25 15:51:10 erwan Exp $
 
-=head1 AUTHOR
+=head1 AUTHOR/CREDITS
 
 Erwan Lemonnier C<< <erwan@cpan.org> >>
+Patched by Dalia Essam (aelshesh)
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -319,8 +321,3 @@ This is free code and comes with no warranty. The author declines any personal
 responsibility regarding the use of this code or the consequences of its use.
 
 =cut
-
-
-
-
-
